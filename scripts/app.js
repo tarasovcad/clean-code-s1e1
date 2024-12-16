@@ -42,12 +42,11 @@ const createNewTaskElement = (taskString) => {
     editButton.innerText = "Edit";
     editButton.className = "todo-list__button todo-list__button--edit";
 
- 
     const deleteButton = document.createElement("button");
     deleteButton.className = "todo-list__button todo-list__button--delete";
 
     const deleteButtonImg = document.createElement("img");
-    deleteButtonImg.src = './remove.svg';
+    deleteButtonImg.src = '/images/remove.svg';
     deleteButtonImg.className = "todo-list__icon";
     deleteButtonImg.alt = "Delete";
     deleteButton.appendChild(deleteButtonImg);
@@ -58,6 +57,7 @@ const createNewTaskElement = (taskString) => {
     listItem.appendChild(editInput);
     listItem.appendChild(editButton);
     listItem.appendChild(deleteButton);
+
     return listItem;
 }
 
@@ -95,7 +95,7 @@ const editTask = function() {
 //Delete task.
 const deleteTask = function() {
     const listItem=this.parentNode;
-    const ul=listItem.parentNode;
+    const ul = listItem.parentNode;
     ul.removeChild(listItem);
 }
 
@@ -127,20 +127,14 @@ const bindTaskEvents= (taskListItem,checkBoxEventHandler) => {
     checkBox.onchange=checkBoxEventHandler;
 }
 
-addButton.addEventListener("click", () => {
-    addTask();
-});
 
 // Initial binding of events to existing tasks in the list
 const bindExistingTasks = () => {
     for (let i = 0; i < incompleteTaskHolder.children.length; i++) {
         bindTaskEvents(incompleteTaskHolder.children[i], taskCompleted);
     }
-
-    for (let i = 0; i < completedTasksHolder.children.length; i++) {
-        bindTaskEvents(completedTasksHolder.children[i], taskIncomplete);
-    }
 };
 
+addButton.addEventListener("click", addTask);
 bindExistingTasks();
 
