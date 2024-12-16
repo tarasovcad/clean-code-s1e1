@@ -5,40 +5,40 @@ body {
     font-family: Lato, sans-serif;
 }
 
-.info-section {
+.header {
     width: 500px;
     margin: 0 auto;
     display: block;
     text-align: right;
 }
 
-.info-section img {
+.header__image {
     width: 100%;
 }
 
-.info-section .more_inf {
+.header__link {
     font-family: fantasy, cursive;
 }
 
 @media (max-width:768px) {
-    .info-section { 
+    .header { 
         text-align: center;
     }
 }
 
-.main-content {
+.main {
     display: block;
     width: 500px;
     margin: 0 auto 0;
 }
 
-.task {
+.add-item__input {
     width: 56%;
     display: inline-block;
     flex-grow: 1
 }
 
-.task-row-wrapper {
+.add-item__input-wrapper {
     display: flex;
 }
 
@@ -70,7 +70,17 @@ button:hover {
 }
 
 /* Heading */
-h3, label[for="new-task"] {
+h3 {
+    color: #333;
+    font-weight: 700;
+    font-size: 15px;
+    border-bottom: 2px solid #333;
+    padding: 30px 0 10px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.add-item__label {
     color: #333;
     font-weight: 700;
     font-size: 15px;
