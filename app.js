@@ -46,7 +46,7 @@ const createNewTaskElement = (taskString) => {
     deleteButton.className = "todo-list__button todo-list__button--delete";
 
     const deleteButtonImg = document.createElement("img");
-    deleteButtonImg.src = '/images/remove.svg';
+    deleteButtonImg.src = '/remove.svg';
     deleteButtonImg.className = "todo-list__icon";
     deleteButtonImg.alt = "Delete";
     deleteButton.appendChild(deleteButtonImg);
